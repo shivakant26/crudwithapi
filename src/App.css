@@ -48,7 +48,7 @@ input[type="text"]:focus{
   margin: 0 auto;
 }
 form{
-  padding-top: 100px;
+  padding-top: 39px;
 }
 button.login-btn.btn.btn-primary {
   background: #21199b;
@@ -65,4 +65,132 @@ button.login-btn.btn.btn-primary:hover{
   margin: 0;
   position: absolute;
   font-size: 14px;
+}
+.left-sidebar {
+  /* background: black; */
+  background-repeat: no-repeat;
+  background-image: url("../src/assets/images/sidebar_img.jpg");
+  color: #fff;
+  padding: 37px 22px;
+  background-size: cover;
+}
+.sidebar-item-inner a{
+  text-decoration: none;
+  color: #fff;
+  width: 100%;
+  display: inline-block;
+  text-align: left;
+  padding: 10px 0px;
+  border-bottom: 1px solid #fff;
+  margin: 10px 0px;
+}
+.sidebar-item{
+  padding: 25px 40px;
+}
+.sidebar-item-inner {
+  padding: 0px 69px;
+}
+.col-sm-4,.col-sm-8{
+  padding: 0 !important;
+}
+.show-page-heading {
+  background: #af0855;
+  position: relative;
+  padding: 26px 0px;
+  color: #fff;
+}
+.show-page-heading::before{
+  position: absolute;
+  content: "";
+  height: 5px;
+}
+a.logout {
+  background: red;
+  text-align: center;
+  border-radius: 5px;
+  padding: 9px 0px;
+  width: 100px;
+  border:none;
+}
+.create-post-form{
+  max-width: 50%;
+  margin: 0 auto;
+}
+.create-post-page {
+  padding: 50px 0px;
+}
+.ct-post-heading h5{
+  text-align: left;
+  position: relative;
+  padding: 0px 100px;
+  text-transform: capitalize;
+}
+.ct-post-heading h5::after{
+  position: absolute;
+  content: "";
+  width: 5px;
+  height: 5px;
+}
+.ct-post-heading h5::after {
+  position: absolute;
+  content: "";
+  width: 105px;
+  height: 3px;
+  background: #af0855;
+  left: 101px;
+  top: 30px;
+}
+.ct-post-heading h5::before{
+  position: absolute;
+  content: "";
+  width: 10px;
+  height: 10px;
+  background: #af0855;
+  left: 77px;
+  top: 9px;
+  border-radius: 45px;
+}
+.show-page-heading::before {
+  position: absolute;
+  content: "";
+  height: 29px;
+  width: 504px;
+  top: 0px;
+  left: -453px;
+  background: #af0855;
+}
+table {
+  font-family: arial, sans-serif;
+  border-collapse: collapse;
+  width: 100%;
+}
+
+td, th {
+  border: 1px solid #dddddd;
+  text-align: left !important;
+  padding: 8px;
+}
+
+tr:nth-child(even) {
+  background-color: #dddddd;
+}
+.del-btn , .edit-button{
+  margin: 0px 8px;
+  background-color: #af0855;
+  border:none;
+  width: 80px;
+  color: #fff;
+  border-radius: 5px;
+  transition: .5s;
+  font-size: 15px;
+  padding: 5px 10px;
+}
+.edit-button{
+  background: #03139e;
+}
+.del-btn:hover{
+  background-color: rgb(85, 0, 50);
+}
+.edit-button:hover{
+  background-color: #af0855;
 }

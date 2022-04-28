@@ -1,6 +1,5 @@
-import { REGISTER_USER , LOGIN_USER , ERROR } from "../actionType";
+import { REGISTER_USER , LOGIN_USER , ERROR, CREATE_POST ,SHOW_POST ,DELETE_POST} from "../actionType";
 import  instance  from "../../Utils/getApi";
-import axios from "axios";
 
 export const Register_user = (body) =>{
     return (dispatch) => {
@@ -31,9 +30,62 @@ export const Login_user = (body) =>{
            
             .catch(error => {
                 dispatch({
+                    type:ERROR,
+                    payload: error.response
+                })
+            });
+    };
+}
+
+export const create_post = (body) =>{
+    return (dispatch) => {
+        return instance.post('/posts', body)
+            .then(data => {
+                dispatch({
+                    type:CREATE_POST,
+                    payload: data
+                })
+            })
+            .catch(error => {
+                dispatch({
                     type:"ERROR",
                     payload: error.response
                 })
             });
     };
+    
+}
+export const show_post = () =>{
+    return (dispatch) => {
+        return instance.get('/posts')
+            .then(data => {
+                dispatch({
+                    type:SHOW_POST,
+                    payload: data
+                })
+            })
+            .catch(error => {
+                dispatch({
+                    type:"ERROR",
+                    payload: error.response
+                })
+            });
+    };   
+}
+export const delete_post = (id) =>{
+    return (dispatch) => {
+        return instance.delete(`/posts/${id}`)
+            .then(data => {
+                dispatch({
+                    type:DELETE_POST,
+                    payload: data
+                })
+            })
+            .catch(error => {
+                dispatch({
+                    type:"ERROR",
+                    payload: error.response
+                })
+            });
+    };   
 }

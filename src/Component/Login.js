@@ -1,13 +1,15 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Button } from "react-bootstrap";
 import { useForm } from "react-hook-form";
 import { useDispatch, useSelector } from "react-redux";
 import { Login_user } from "../Redux/Action/userAction";
+import {toast} from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const Login = () => {
     const dispatch = useDispatch();
-    const login_response = useSelector((state)=>state)
-    console.log(10101010,login_response);
+    const login_response = useSelector((state)=>state.userReducer)
+    console.log(323232,login_response);
     const {
         register,
         handleSubmit,
@@ -18,9 +20,20 @@ const Login = () => {
       const Login = (data) => {
           let logindata = {user:data}
           dispatch(Login_user(logindata))
-        console.log(data);
+          if(login_response?.Error?.status === 400 ){
+              toast.error(`${login_response?.Error?.data?.errors[0]}`,
+           {position: toast.POSITION.TOP_RIGHT})
+          }else{
+            if(localStorage.getItem("logintoken")){
+                toast.success(`${login_response?.Login_Data?.data?.message[0]}`,
+           {position: toast.POSITION.TOP_RIGHT})
+                window.location.href = "/dashboard";  
+               }
+          }    
       };
+    useEffect(()=>{
 
+    },[login_response])
     return (
         <div>
             <form onSubmit={handleSubmit(Login)}>

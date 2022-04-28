@@ -9,10 +9,8 @@ toast.configure();
 
 const Registration  = () =>{
     const dispatch = useDispatch();
-    const response = useSelector((state)=>state.userReducer.Register_Data)
-    // const response_error = useSelector((state)=>state.userReducer.Error.data.errors);
-
-    // console.log(121212121,response_error)
+    const response = useSelector((state)=>state.userReducer)
+    // console.log(12222,response?.Register_Data?.data?.message);
     const {
         register,
         handleSubmit,
@@ -22,21 +20,23 @@ const Registration  = () =>{
 
       const Register = (data) => {
           let regobj = {user:data}
-        //   console.log(regobj);
           dispatch(Register_user(regobj))
-          if(response?.status == 200){
-            toast("Register successfully", {
-                position: "top-right",
-                autoClose: 5000,
-                hideProgressBar: false,
-                closeOnClick: true,
-                pauseOnHover: true,
-                draggable: true,
-                progress: undefined,
-                });
+          if(response?.Error?.status === 400){
+            if(response?.Error?.data?.errors[0]){
+                alert(`${response?.Error?.data?.errors[0]}`)
+            }if(response?.Error?.data?.errors[1]){
+                alert(`${response?.Error?.data?.errors[1]}`)
+            }if(response?.Error?.data?.errors[2]){
+                alert(`${response?.Error?.data?.errors[2]}`)
+            }if(response?.Error?.data?.errors[0] && response?.Error?.data?.errors[1] && response?.Error?.data?.errors[2]){
+                alert(`${response?.Error?.data?.errors[0]} or ${response?.Error?.data?.errors[1]}`)
+            }
+          }else{
+              if(response?.Register_Data?.status === 200){
+                  alert(`${response?.Register_Data?.data?.message}`)
+              }
           }
-      };
-
+          }
 
     return(
         <div>
