@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useEffect } from "react";
 
 const UpdatePost = () =>{
+    
+      
     return(
         <div>
-            <h4>Update post</h4>
+            <h3>Component under the process</h3>
         </div>
     )
 }

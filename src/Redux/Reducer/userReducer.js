@@ -1,4 +1,4 @@
-import { REGISTER_USER ,LOGIN_USER , ERROR, CREATE_POST ,SHOW_POST ,DELETE_POST } from "../actionType"
+import { REGISTER_USER ,LOGIN_USER , ERROR, CREATE_POST ,SHOW_POST ,DELETE_POST, SINGLE_POST_SHOW ,UPDATE_POST } from "../actionType"
 
 const initialState = {
     Register_Data:[],
@@ -14,34 +14,47 @@ const userReducer = (state=initialState,action) =>{
             return{
                 ...state,
                 Register_Data:action.payload,
+                Error:[]
             }
-            break;
             case CREATE_POST :
             return{
                 ...state,
                 Post:action.payload,
+                Error:[]
             }
-            break;
             case SHOW_POST :
             return{
                 ...state,
                 showPost:action.payload,
+                Error:[]
             }
-            break;
             case DELETE_POST :
             return{
                 ...state,
-                showPost:action.payload,
+                deletePost:action.payload,
+                Error:[]
             }
-            break;
+            case UPDATE_POST :
+            return{
+                ...state,
+                updatePost:action.payload,
+                Error:[]
+            }
+            case SINGLE_POST_SHOW :
+            return{
+                ...state,
+                singlePost:action.payload,
+                showPost:"",
+                Error:[]
+            }
             case LOGIN_USER :
                 let Token = action.payload.data.token;
                 localStorage.setItem('logintoken',Token);
             return{
                 ...state,
                 Login_Data:action.payload,
+                Error:[]
             }
-            break;
             case ERROR:
                 return{
                     ...state,

@@ -71,7 +71,7 @@ button.login-btn.btn.btn-primary:hover{
   background-repeat: no-repeat;
   background-image: url("../src/assets/images/sidebar_img.jpg");
   color: #fff;
-  padding: 37px 22px;
+  padding: 37px 0px;
   background-size: cover;
 }
 .sidebar-item-inner a{
@@ -88,9 +88,9 @@ button.login-btn.btn.btn-primary:hover{
   padding: 25px 40px;
 }
 .sidebar-item-inner {
-  padding: 0px 69px;
+  padding: 0px 25px;
 }
-.col-sm-4,.col-sm-8{
+.col-sm-3,.col-sm-9{
   padding: 0 !important;
 }
 .show-page-heading {
@@ -109,6 +109,7 @@ a.logout {
   text-align: center;
   border-radius: 5px;
   padding: 9px 0px;
+  color: #fff;
   width: 100px;
   border:none;
 }
@@ -193,4 +194,18 @@ tr:nth-child(even) {
 }
 .edit-button:hover{
   background-color: #af0855;
+}
+.table-content {
+  box-shadow: 0px 4px 15px rgb(0 0 0 / 80%);
+  margin: 19px;
+  padding: 22px;
+}
+.table-heading h4{
+  text-transform: capitalize;
+  padding: 25px 0px;
+}
+.errormsg{
+  text-align: center;
+  font-size: 25px;
+  color: #854b00;
 }

@@ -11,7 +11,7 @@ const Dashboard = () => {
         <div className="dashboard-page">
             <Container fluid>
                 <Row>
-                    <Col sm={4}>
+                    <Col sm={3}>
                         <div className="left-sidebar">
                             <div className="sidebar-heading">
                             <h2>Dashboard</h2>
@@ -24,7 +24,7 @@ const Dashboard = () => {
                             </div>
                         </div>
                     </Col>
-                    <Col sm={8}>
+                    <Col sm={9}>
                         <div className="show-pages">
                             <div className="show-page-heading">
                                 <h4>Alumani WorkSpace</h4>

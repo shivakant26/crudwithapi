@@ -14,8 +14,10 @@ import ShowPost from './Component/Posts/showPost';
 import UpdatePost from './Component/Posts/updatePost';
 import DeletePost from './Component/Posts/deletePost';
 
+
 function App() {
   const token = localStorage.getItem("logintoken")
+
   return (
     <div className="App">
       <Router>
@@ -25,6 +27,7 @@ function App() {
               <Routes>
                 <Route path="/dashboard/" exact={true} element={<Dashboard />} >
                   <Route path="createPost" exact={true} element={<CreatePost />} />
+                  <Route path="createPost/:id" exact={true} element={<CreatePost />} />
                   <Route path="listPost" exact={true} element={<ShowPost />} />
                   <Route path="updatePost" exact={true} element={<UpdatePost />} />
                   <Route path="deletePost" exact={true} element={<DeletePost />} />
